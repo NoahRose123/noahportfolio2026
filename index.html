@@ -1,0 +1,1140 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description"
+    content="Noah Rose's student portfolio: projects, activities, and interests in coding and technology.">
+  <title>Noah Rose | Student Portfolio</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --ink: #17212d;
+      --muted: #5d6875;
+      --blue: #1769aa;
+      --blue-dark: #104e80;
+      --blue-pale: #edf5fb;
+      --line: #dce3e9;
+      --paper: #ffffff;
+      --soft: #f7f9fb;
+      --content: 1080px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 88px;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 16px;
+      line-height: 1.55;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    a:focus-visible {
+      outline: 3px solid #73b7e8;
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(var(--content), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      position: sticky;
+      z-index: 5;
+      top: 0;
+      background: rgba(255, 255, 255, .97);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .identity {
+      text-decoration: none;
+      line-height: 1.25;
+    }
+
+    .identity strong {
+      display: block;
+      font-size: 18px;
+    }
+
+    .identity span {
+      display: block;
+      margin-top: 4px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 26px;
+    }
+
+    .nav a {
+      padding: 8px 0;
+      color: #394655;
+      font-size: 14px;
+      text-decoration: none;
+    }
+
+    .nav a:hover,
+    .nav a[aria-current="location"] {
+      color: var(--blue);
+    }
+
+    main section {
+      scroll-margin-top: 88px;
+    }
+
+    .hero {
+      padding: 76px 0 64px;
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr 310px;
+      align-items: center;
+      gap: 64px;
+    }
+
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--blue);
+      font-size: 13px;
+      font-weight: 650;
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1 {
+      max-width: 620px;
+      margin-bottom: 18px;
+      font-size: clamp(38px, 6vw, 58px);
+      line-height: 1.08;
+      font-weight: 680;
+    }
+
+    .hero-copy {
+      max-width: 510px;
+      margin-bottom: 26px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .button-link {
+      display: inline-flex;
+      min-height: 44px;
+      align-items: center;
+      padding: 0 17px;
+      border: 1px solid var(--blue);
+      border-radius: 4px;
+      background: var(--blue);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .button-link:hover {
+      border-color: var(--blue-dark);
+      background: var(--blue-dark);
+    }
+
+    .portrait-placeholder {
+      min-height: 260px;
+      display: grid;
+      place-items: center;
+      border: 1px dashed #a8c8e0;
+      background: var(--blue-pale);
+      color: #456a86;
+      text-align: center;
+    }
+
+    .portrait-placeholder span {
+      padding: 18px;
+      font-size: 13px;
+    }
+
+    .section {
+      padding: 66px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-tint {
+      background: var(--soft);
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      margin-bottom: 0;
+      font-size: 30px;
+      line-height: 1.2;
+      font-weight: 650;
+    }
+
+    .section-heading p {
+      max-width: 450px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .section-label {
+      margin: 0 0 8px;
+      color: var(--blue);
+      font-size: 12px;
+      font-weight: 650;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .project-card {
+      min-width: 0;
+      border: 1px solid var(--line);
+      background: white;
+    }
+
+    .image-slot {
+      aspect-ratio: 16 / 10;
+      display: grid;
+      place-items: center;
+      border-bottom: 1px solid var(--line);
+      background: #f1f6fa;
+      color: #577189;
+      text-align: center;
+    }
+
+    .project-image {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      border-bottom: 1px solid var(--line);
+      background: #f1f6fa;
+      object-fit: cover;
+    }
+
+    .project-image.contain {
+      object-fit: contain;
+    }
+
+    .featured-image {
+      background: transparent;
+      border: 0;
+      object-fit: contain;
+    }
+
+    .video-player {
+      display: block;
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      background: #111820;
+      object-fit: contain;
+    }
+
+    .image-slot span {
+      padding: 14px;
+      font-size: 13px;
+    }
+
+    .project-copy {
+      padding: 18px;
+    }
+
+    .project-copy h3 {
+      margin-bottom: 7px;
+      font-size: 18px;
+      font-weight: 650;
+    }
+
+    .project-copy p {
+      margin-bottom: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .text-link {
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 3px;
+    }
+
+    .project-copy .text-link {
+      display: inline-block;
+      margin-top: 12px;
+    }
+
+    .subsection {
+      margin-top: 54px;
+    }
+
+    .subsection:first-of-type {
+      margin-top: 0;
+    }
+
+    .subsection-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 20px;
+      margin-bottom: 18px;
+    }
+
+    .subsection-head h3 {
+      margin: 0;
+      font-size: 21px;
+      font-weight: 650;
+    }
+
+    .subsection-head p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .project-grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .project-grid.four {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .project-grid.four .image-slot {
+      aspect-ratio: 4 / 3;
+    }
+
+    .project-grid.four .project-copy {
+      padding: 14px;
+    }
+
+    .project-grid.four .project-copy h3 {
+      font-size: 16px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .gallery-item {
+      min-width: 0;
+    }
+
+    .gallery-item img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      background: #f1f6fa;
+    }
+
+    .gallery-item p {
+      margin: 8px 0 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .game-feature {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 20px;
+      margin-bottom: 20px;
+    }
+
+    .game-brand {
+      min-height: 100%;
+      display: grid;
+      place-items: center;
+      padding: 28px;
+      background: var(--blue-pale);
+    }
+
+    .game-brand img {
+      display: block;
+      width: min(100%, 250px);
+      max-height: 250px;
+      object-fit: contain;
+    }
+
+    .game-pair {
+      display: grid;
+      grid-template-columns: minmax(110px, .8fr) minmax(0, 1.5fr);
+      align-items: stretch;
+    }
+
+    .game-icon {
+      display: grid;
+      min-height: 150px;
+      place-items: center;
+      padding: 14px;
+      background: white;
+    }
+
+    .game-icon img {
+      display: block;
+      width: 100%;
+      max-height: 210px;
+      aspect-ratio: 1;
+      object-fit: contain;
+    }
+
+    .game-icon-empty {
+      background: white;
+    }
+
+    .game-pair .video-player {
+      height: 100%;
+    }
+
+    .game-pair .project-copy {
+      grid-column: 1 / -1;
+    }
+
+    .flockview-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .flockview-layout>.video-player {
+      border: 1px solid var(--line);
+    }
+
+    .flockview-details h4 {
+      margin: 0 0 12px;
+      font-size: 18px;
+      font-weight: 650;
+    }
+
+    .flockview-details p {
+      margin: 0 0 14px;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .record-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .record-row {
+      display: grid;
+      grid-template-columns: minmax(180px, .8fr) minmax(110px, .5fr) minmax(0, 1.7fr);
+      gap: 20px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .record-row strong {
+      font-size: 14px;
+      font-weight: 620;
+    }
+
+    .record-row>span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .record-row p,
+    .record-row ul {
+      margin: 0;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .record-row ul {
+      padding-left: 18px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 7px;
+      margin: 14px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .tag-list li {
+      padding: 4px 8px;
+      border: 1px solid #d6e4ef;
+      color: #355c7b;
+      font-size: 12px;
+    }
+
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .video-slot {
+      aspect-ratio: 16 / 9;
+      display: grid;
+      place-items: center;
+      border: 1px dashed #a8c8e0;
+      background: #f1f6fa;
+      color: #456a86;
+      text-align: center;
+    }
+
+    .video-slot span {
+      padding: 14px;
+      font-size: 13px;
+    }
+
+    .channel-line {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 22px;
+      padding-top: 18px;
+      border-top: 1px solid var(--line);
+    }
+
+    .channel-line p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .activity-list {
+      border-top: 1px solid var(--line);
+    }
+
+    .activity-row {
+      display: grid;
+      grid-template-columns: minmax(190px, 1.2fr) 1fr 1fr 1fr;
+      gap: 20px;
+      align-items: center;
+      min-height: 66px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .activity-row strong {
+      font-size: 15px;
+      font-weight: 620;
+    }
+
+    .activity-row span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    .activity-labels {
+      padding: 0 0 9px;
+      color: #6d7884;
+      font-size: 11px;
+      font-weight: 650;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 50px;
+    }
+
+    .about-grid p {
+      max-width: 500px;
+      margin-bottom: 12px;
+      color: var(--muted);
+    }
+
+    .contact-list {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .profile-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      max-width: 620px;
+    }
+
+    .contact-item {
+      min-height: 76px;
+      padding: 13px 15px;
+      border: 1px solid var(--line);
+    }
+
+    .profile-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .profile-link img {
+      width: 30px;
+      height: 30px;
+      flex: 0 0 30px;
+      object-fit: contain;
+    }
+
+    .profile-copy {
+      display: block;
+    }
+
+    .section-bridge {
+      display: flex;
+      justify-content: center;
+      padding: 24px;
+      border-top: 1px solid var(--line);
+    }
+
+    .section-bridge p {
+      max-width: 560px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .contact-item strong {
+      display: block;
+      margin-bottom: 3px;
+      font-size: 14px;
+    }
+
+    .contact-item span {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      padding: 22px 0;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+    }
+
+    @media (max-width: 760px) {
+      .wrap {
+        width: min(var(--content), calc(100% - 32px));
+      }
+
+      .header-inner {
+        min-height: 70px;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        gap: 6px;
+        padding: 10px 0;
+      }
+
+      .nav {
+        width: 100%;
+        gap: 5px 20px;
+      }
+
+      .nav a {
+        padding: 3px 0;
+        font-size: 13px;
+      }
+
+      .hero {
+        padding: 48px 0;
+      }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+
+      .portrait-placeholder {
+        min-height: 170px;
+      }
+
+      .section {
+        padding: 48px 0;
+      }
+
+      .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .project-grid,
+      .project-grid.two {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .project-grid.four {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .gallery-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .game-feature {
+        grid-template-columns: 1fr 1.35fr;
+      }
+
+      .flockview-layout {
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .activity-row {
+        grid-template-columns: minmax(125px, 1.2fr) 1fr 1fr;
+        gap: 12px;
+      }
+
+      .activity-row> :last-child,
+      .activity-labels> :last-child {
+        display: none;
+      }
+
+      .record-row {
+        grid-template-columns: minmax(120px, .8fr) minmax(90px, .55fr) minmax(0, 1.5fr);
+        gap: 12px;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 460px) {
+      .nav {
+        justify-content: space-between;
+        gap: 4px 10px;
+      }
+
+      .nav a {
+        font-size: 12px;
+      }
+
+      .project-grid,
+      .project-grid.two,
+      .project-grid.four,
+      .video-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .game-feature {
+        grid-template-columns: 1fr;
+      }
+
+      .game-brand {
+        min-height: 180px;
+      }
+
+      .flockview-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .record-row {
+        grid-template-columns: 1fr auto;
+        gap: 5px 12px;
+      }
+
+      .record-row p,
+      .record-row ul {
+        grid-column: 1 / -1;
+      }
+
+      .project-grid.four .image-slot {
+        aspect-ratio: 16 / 9;
+      }
+
+      .activity-row {
+        grid-template-columns: minmax(112px, 1.2fr) 1fr 1fr;
+        gap: 8px;
+      }
+
+      .activity-row span,
+      .activity-labels {
+        font-size: 12px;
+      }
+
+      .contact-list {
+        grid-template-columns: 1fr;
+      }
+
+      .channel-line {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      footer .wrap {
+        flex-direction: column;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a class="identity" href="#home"><strong>Noah Rose</strong><span>Grade 12 Student | Ontario Canada</span></a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home">Home</a><a href="#projects">Projects</a><a href="#activities">Activities</a><a
+          href="#about">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-inner">
+        <div>
+          <p class="eyebrow"></p>
+          <h1>Hi, I'm Noah.</h1>
+          <p class="hero-copy">I like coding, building projects, computers, and learning new technology.</p><a
+            class="button-link" href="#projects">See my projects</a>
+        </div>
+        <div class="portrait-placeholder"><img src="noah_grade_11.jpg" alt="Noah Rose"
+            style="display:block;width:100%;height:100%;min-height:260px;object-fit:cover;object-position:center 28%">
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-tint" aria-labelledby="featured-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">A FEW THINGS I'VE MADE</p>
+            <h2 id="featured-title">Featured projects</h2>
+          </div>
+        </div>
+        <div class="project-grid">
+          <article class="project-card"><img class="project-image featured-image" src="rwc_logo.jpg"
+              alt="RoseWebCreation logo">
+            <div class="project-copy">
+              <h3>Websites</h3>
+              <p>Websites I've built, including business websites through RoseWebCreation.</p><a class="text-link"
+                href="#rosewebcreation">More about websites</a>
+            </div>
+          </article>
+          <article class="project-card"><img class="project-image featured-image" src="roseRBX.webp"
+              alt="RoseRBX games artwork">
+            <div class="project-copy">
+              <h3>Video Games</h3>
+              <p>Game footage from projects I've made.</p><a class="text-link" href="#games">Watch game demos</a>
+            </div>
+          </article>
+          <article class="project-card"><img class="project-image featured-image" src="flockviewlogo.png"
+              alt="FlockView logo">
+            <div class="project-copy">
+              <h3>FlockView</h3>
+              <p>Poultry management software built with HTML, CSS, PHP, and MySQL.</p><a class="text-link"
+                href="#flockview-demo">View demo</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="projects" aria-labelledby="projects-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">MADE AND LEARNED</p>
+            <h2 id="projects-title">Projects</h2>
+          </div>
+        </div>
+
+        <div class="subsection" id="websites">
+          <div class="subsection-head">
+            <h3>Websites</h3>
+          </div>
+          <div class="project-grid two">
+            <article class="project-card" id="rosewebcreation"><video class="video-player" controls preload="none"
+                playsinline data-random-preview>
+                <source src="WEBSITE%20SHOWCASE%20VIDEO.mp4" type="video/mp4">Your browser cannot play this video.
+              </video>
+              <div class="project-copy">
+                <h3>RoseWebCreation</h3>
+                <p>I build and maintain websites for local businesses and manage client projects.</p>
+                <p>Languages: HTML, CSS, and JavaScript.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection" id="games">
+          <div class="subsection-head">
+            <h3>Games</h3>
+          </div>
+          <div class="project-grid two">
+            <article class="project-card game-pair">
+              <div class="game-icon"><img src="drone_game_logo.jpeg" alt="Drone Game logo"></div><video
+                class="video-player" controls preload="none" playsinline data-random-preview>
+                <source src="drone%20game%20pygame%20showcase.mp4" type="video/mp4">Your browser cannot play this video.
+              </video>
+              <div class="project-copy">
+                <h3>Drone Game</h3>
+                <p>Drone Game, collect trash and upgrade drones</p>
+                <p>Technologies: Python, Pygame</p>
+              </div>
+            </article>
+            <article class="project-card game-pair">
+              <div class="game-icon"><img src="falling_floors_icon.webp" alt="Falling Floors icon"></div><video
+                class="video-player" controls preload="none" playsinline data-random-preview>
+                <source src="Falling%20floors%20roblox%20showcase.mp4" type="video/mp4">Your browser cannot play this
+                video.
+              </video>
+              <div class="project-copy">
+                <h3>Falling Floors</h3>
+                <p>Falling Floors, survive every floor</p>
+                <p>Technologies: Luau, Roblox Studio</p>
+              </div>
+            </article>
+            <article class="project-card game-pair">
+              <div class="game-icon"><img src="Untitled%20design%20(1).jpg" alt="Type Anything logo"></div><video
+                class="video-player" controls preload="none" playsinline data-random-preview>
+                <source src="type%20anything%20roblox%20showcase.mp4" type="video/mp4">Your browser cannot play this
+                video.
+              </video>
+              <div class="project-copy">
+                <h3>Type Anything</h3>
+                <p>A game where you can type anything on Roblox</p>
+                <p>Technologies: Luau, Roblox Studio</p>
+              </div>
+            </article>
+
+            <article class="project-card game-pair">
+              <div class="game-icon"><img src="urainum_fever_logo.jpeg" alt="Uranium Fever icon"></div><video
+                class="video-player" controls preload="none" playsinline data-random-preview>
+                <source src="Urainum%20Fever%20video.mp4" type="video/mp4">Your browser cannot play this video.
+              </video>
+              <div class="project-copy">
+                <h3>Uranium Fever</h3>
+                <p>Urainium Fever, your mining monopoly</p>
+                <p>Technologies: Python, Pygame</p>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <div class="subsection" id="flockview">
+          <div class="subsection-head">
+            <h3>FlockView</h3>
+          </div>
+          <div class="flockview-layout">
+            <video class="video-player" id="flockview-demo" controls preload="none" playsinline data-random-preview>
+              <source src="flock%20view%20demo%20copy.mp4" type="video/mp4">Your browser cannot play this video.
+            </video>
+            <div class="flockview-details">
+              <h4>Poultry farm management system</h4>
+              <p>FlockView is a poultry farm management system I built to help track and manage chicken barns and
+                flocks. It includes tools for recording daily mortality, feed schedules, flock information, visitors,
+                shipping, crop setup, and farm records. The goal is to make farm data easier to record, organize, and
+                access in one place.</p>
+              <p>Technologies: HTML, CSS, PHP, MySQL, Docker, and Nginx.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="subsection" id="cybersecurity">
+          <div class="subsection-head">
+            <h3>Coding challenges</h3>
+          </div>
+          <div class="contact-list profile-grid">
+            <a class="contact-item profile-link" href="https://tryhackme.com/p/rosewebc" target="_blank"
+              rel="noreferrer"><img src="https://cdn.simpleicons.org/tryhackme/212C42" alt=""><span
+                class="profile-copy"><strong>TryHackMe</strong><span>View my profile</span></span></a>
+            <a class="contact-item profile-link" href="https://leetcode.com/u/Noah121/" target="_blank"
+              rel="noreferrer"><img src="https://cdn.simpleicons.org/leetcode/FFA116" alt=""><span
+                class="profile-copy"><strong>LeetCode</strong><span>View my profile</span></span></a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="section section-tint" id="activities" aria-labelledby="activities-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <div>
+            <p class="section-label">SCHOOL, COMMUNITY, AND WORK</p>
+            <h2 id="activities-title">Activities &amp; experience</h2>
+          </div>
+        </div>
+
+        <section class="subsection" aria-labelledby="school-activities-title">
+          <div class="subsection-head">
+            <h3 id="school-activities-title">In-school activities</h3>
+          </div>
+          <div class="record-list">
+            <div class="record-row"><strong>Christian Club</strong><span>Grades 11, 12</span>
+              <p>2 hours per week</p>
+            </div>
+            <div class="record-row"><strong>Computer Club</strong><span>Grades 11, 12</span>
+              <p>2 hours per week</p>
+            </div>
+            <div class="record-row"><strong>Cross Country</strong><span>Grade 12</span>
+              <p>6 hours per week</p>
+            </div>
+            <div class="record-row"><strong>Chess Team</strong><span>Grade 12</span>
+              <p>2 hours per week</p>
+            </div>
+            <div class="record-row"><strong>Football Team</strong><span>Grade 10</span>
+              <p>6 hours per week</p>
+            </div>
+            <div class="record-row"><strong>Science Fair Club</strong><span>Grade 12</span>
+              <p>2 hours per week</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="subsection" aria-labelledby="volunteering-title">
+          <div class="subsection-head">
+            <h3 id="volunteering-title">Volunteering &amp; community service</h3>
+          </div>
+          <div class="record-list">
+            <div class="record-row"><strong>Grimsby Lions Pool</strong><span>52.5 hours</span>
+              <ul>
+                <li>Taught and demonstrated swimming techniques</li>
+                <li>Helped swimmers improve their skills</li>
+                <li>Supervised swimmers and maintained safety</li>
+              </ul>
+            </div>
+            <div class="record-row"><strong>Winona Gospel Church</strong><span>Grades 9-12</span>
+              <p>Church volunteer · 3 hours</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="subsection" aria-labelledby="employment-title">
+          <div class="subsection-head">
+            <h3 id="employment-title">Employment</h3>
+          </div>
+          <div class="record-list">
+            <div class="record-row"><strong>Grimsby Lions Community Pool · Grimsby</strong><span>Grades 11, 12</span>
+              <p>Lifeguard Instructor · 35 hours/Week</p>
+            </div>
+            <div class="record-row"><strong>Marlins Swim Academy · Smithville</strong><span>Grade 12</span>
+              <p>Swim Instructor · 12 hours/Week</p>
+            </div>
+            <div class="record-row"><strong>Rose Farm Management · Smithville</strong><span>Grades 9-12</span>
+              <p>Farm Hand · 4 hours/Week</p>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section class="section" id="about" aria-labelledby="about-title">
+      <div class="wrap about-grid">
+        <div>
+          <h2 id="about-title">About Noah</h2>
+          <p>I'm a Grade 12 student interested in computer science and software engineering, and I plan to attend
+            university.</p>
+          <p>I enjoy learning by making things, from FlockView to Roblox projects and websites for local businesses.
+            Coding has taught me patience, persistence, and initiative.</p>
+        </div>
+        <div id="contact">
+          <p class="section-label"></p>
+          <h2>Contact</h2>
+          <div class="contact-list"><a class="contact-item"
+              href="mailto:rosewebc@gmail.com"><strong>Email</strong><span>rosewebc@gmail.com</span></a><a
+              class="contact-item" href="https://github.com/NoahRose123" target="_blank"
+              rel="noreferrer"><strong>GitHub</strong><span>NoahRose123</span></a><a class="contact-item"
+              href="https://www.youtube.com/@RoseRBX" target="_blank"
+              rel="noreferrer"><strong>YouTube</strong><span>@RoseRBX</span></a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap"><span>Noah Rose</span><a class="text-link" href="#home">Back to top</a></div>
+  </footer>
+  <script>
+    document.querySelectorAll('video[data-random-preview]').forEach(video => {
+      video.preload = 'metadata';
+      video.addEventListener('loadedmetadata', () => {
+        if (!Number.isFinite(video.duration) || video.duration <= 1) return;
+        video.currentTime = video.duration * (0.12 + Math.random() * 0.7);
+      }, { once: true });
+      video.addEventListener('seeked', () => {
+        video.dataset.previewReady = 'true';
+      });
+      video.addEventListener('play', () => {
+        if (video.dataset.previewReady === 'true' && video.dataset.started !== 'true') {
+          video.dataset.started = 'true';
+          video.currentTime = 0;
+        }
+      });
+      video.load();
+    });
+
+    const navLinks = [...document.querySelectorAll('.nav a')];
+    const observedSections = navLinks.map(link => document.querySelector(link.getAttribute('href'))).filter(Boolean);
+
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(entries => {
+        for (const entry of entries) {
+          if (!entry.isIntersecting) continue;
+          navLinks.forEach(link => {
+            if (link.getAttribute('href') === `#${entry.target.id}`) link.setAttribute('aria-current', 'location');
+            else link.removeAttribute('aria-current');
+          });
+        }
+      }, { rootMargin: '-25% 0px -65% 0px' });
+      observedSections.forEach(section => observer.observe(section));
+    }
+  </script>
+</body>
+
+</html>
